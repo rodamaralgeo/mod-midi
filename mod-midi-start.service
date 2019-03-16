@@ -1,0 +1,16 @@
+[Unit]
+Description=Mod-Midi Service
+After=mod-midi.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/jack_connect "ZynMidiRouter:main_out" "mididings:in_1"
+Restart=always
+User=root
+Group=root
+Nice=-17
+#StandardOutput=tty
+#StandardError=tty
+
+[Install]
+WantedBy=multi-user.target
