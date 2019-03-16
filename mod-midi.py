@@ -1,6 +1,10 @@
 import os
 from mididings import *
 
+config(
+    backend='jack-rt',
+)
+
 run([ChannelFilter(15) >> CtrlFilter(0) >> System('curl http://localhost:8888/pedalpreset/load?id=0'),
 	 ChannelFilter(15) >> CtrlFilter(1) >> System('curl http://localhost:8888/pedalpreset/load?id=1'),
 	 ChannelFilter(15) >> CtrlFilter(2) >> System('curl http://localhost:8888/pedalpreset/load?id=2'),
