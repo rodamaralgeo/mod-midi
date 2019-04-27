@@ -1,16 +1,12 @@
 [Unit]
-Description=Mod-Midi Service
-After=mod-midi.service
+Description=Mod-Midi Service, Start Jack Connection
+After=jack2.service zynthian.service zynthian-webconf.service mod-ui.service
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/jack_connect "ZynMidiRouter:main_out" "mididings:in_1"
 Restart=always
-User=root
-Group=root
-Nice=-17
-#StandardOutput=tty
-#StandardError=tty
+RestartSec=2
 
 [Install]
 WantedBy=multi-user.target
