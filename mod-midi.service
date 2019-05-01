@@ -1,6 +1,6 @@
 [Unit]
 Description=Mod-Midi Service
-After=mod-ui.service
+After=zynthian.service
 
 [Service]
 Type=simple
