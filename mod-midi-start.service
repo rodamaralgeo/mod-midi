@@ -1,7 +1,6 @@
 [Unit]
 Description=Mod-Midi Service, Start Jack Connection
-After=jack2.service zynthian.service zynthian-webconf.service mod-ui.service
-
+After=mod-midi.service
 [Service]
 Type=simple
 ExecStart=/usr/bin/jack_connect "ZynMidiRouter:main_out" "mod-midi-preset:in_1"
