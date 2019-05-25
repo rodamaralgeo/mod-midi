@@ -2,8 +2,8 @@ import os
 from mididings import *
 
 config(
-    backend='mod-midi-preset',
-    client_name='example',
+    backend='jack-rt',
+    client_name='mod-midi-preset',
 )
 
 run([ChannelFilter(15) >> CtrlFilter(0) >> System('curl http://localhost:8888/pedalpreset/load?id=0'),
